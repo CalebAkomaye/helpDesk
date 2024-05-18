@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import TicketList from './getTickets';
 
 const Tickets = () => {
@@ -10,7 +10,9 @@ const Tickets = () => {
           <small>Currently open tickets.</small>
         </p>
       </nav>
-      <TicketList />
+      <Suspense>
+        <TicketList />
+      </Suspense>
     </main>
   );
 };

@@ -16,7 +16,7 @@ export default function Home() {
 
       <div className='flex justify-center my-8'>
         <Link href='/tickets'>
-          <button className='btn-primary'>View Tickets</button>
+          <button className='btn-primary bg-sky-800'>View Tickets</button>
         </Link>
       </div>
 

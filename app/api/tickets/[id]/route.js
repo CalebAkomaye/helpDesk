@@ -8,6 +8,12 @@ export async function GET(_, { params }) {
 
       const tickets = await res.json()
 
+      if (!res.ok) {
+            return NextResponse.json({ error: 'ticket not found' }, {
+                  status: 404,
+            })
+      }
+
       return NextResponse.json(tickets, {
             status: 200,
       })

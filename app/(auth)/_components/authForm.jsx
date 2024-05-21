@@ -7,6 +7,8 @@ const AuthForm = ({ handleSubmit }) => {
     password: '',
   });
 
+  const { email, password } = user;
+
   const handleChange = (e) => {
     e.preventDefault();
     setUser((prev) => ({
@@ -15,13 +17,13 @@ const AuthForm = ({ handleSubmit }) => {
     }));
   };
   return (
-    <form onSubmit={(e) => handleSubmit(e, user)}>
+    <form onSubmit={(e) => handleSubmit(e, email, password)}>
       <label htmlFor='email'>
         <span>Email</span>
         <input
           type='email'
           id='email'
-          value={user.email}
+          value={email}
           required
           onChange={handleChange}
         />
@@ -31,7 +33,7 @@ const AuthForm = ({ handleSubmit }) => {
         <input
           type='password'
           id='password'
-          value={user.password}
+          value={password}
           required
           onChange={handleChange}
         />

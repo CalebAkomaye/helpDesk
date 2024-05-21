@@ -134,10 +134,10 @@ form {
   @apply py-4 px-7
   bg-primary
   bg-opacity-5
-  rounded-md 
-  block 
-    mx-auto 
-    min-w-fit w-1/4;
+  rounded-md
+  block
+  mx-auto
+  min-w-fit w-1/4;
 }
 form label {
   @apply block;

@@ -1,7 +1,16 @@
 import Link from 'next/link';
-import React from 'react';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { createServerClient } from '@supabase/ssr';
 
-const AuthLayoout = ({ children }) => {
+const AuthLayout = async ({ children }) => {
+  const supabase = createServerClient({ cookies });
+  const { data } = await supabase.auth.getSession();
+
+  if (data.session) {
+    redirect('/');
+  }
+
   return (
     <>
       <nav>
@@ -16,4 +25,4 @@ const AuthLayoout = ({ children }) => {
   );
 };
 
-export default AuthLayoout;
+export default AuthLayout;
